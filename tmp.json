@@ -1,0 +1,1 @@
+[{"model": "movies.movie", "pk": 1, "fields": {"title": "\uc5d4\ub4dc\uac8c\uc784", "original_title": "EndGame", "runtime": 181, "overview": "\uc544\uc544 \uc544\uc774\uc5b8\ub9e8..", "poster_url": "https://aa,com", "popularity": 100000000, "director": 1, "genres": [1], "actors": [2]}}]
