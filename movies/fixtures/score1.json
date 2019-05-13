@@ -1,0 +1,22 @@
+[
+	{
+		"model": "movies.score",
+		"pk": 1,
+		"fields": {
+			"content": "",
+			"value": "3",
+			"movie": 299537,
+			"user": "1"
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 2,
+		"fields": {
+			"content": "",
+			"value": "10",
+			"movie": 299534,
+			"user": "1"
+		}
+	}
+]

@@ -20,7 +20,7 @@ class Movie(models.Model):
     director = models.ForeignKey(Creator, on_delete=models.CASCADE)
 
 class Score(models.Model):
-    content = models.CharField(max_length=140)
+    content = models.CharField(max_length=140, blank=True)
     value = models.FloatField()
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
