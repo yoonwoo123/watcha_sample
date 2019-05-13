@@ -15,7 +15,10 @@
     {% for genre in movie.genres.all %}
     <a>{{ genre.name }}</a> |
     {% endfor %}
-
+<br>
+{% for video in movie.video_set.all %}
+    <a href=""><img src="https://i.ytimg.com/vi/{{ video.key }}/hqdefault.jpg" alt=""></a>
+{% endfor %}
 <hr>
 <h2>평점 목록</h2>
 <br>
