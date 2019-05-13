@@ -1,4 +1,25 @@
-{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #list_img {
+            width: 200px;
+            height: 300px;
+        }
+        
+        #detail_img {
+            width: 500px;
+            height: 700px;
+        }
+        
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
 
     <a href="{% url 'accounts:logout' %}">로그아웃</a>
     <form action="" method="post">
@@ -14,3 +35,5 @@
 <a href="{% url 'movies:list' %}">영화 목록</a>
 {% block body %}
 {% endblock %}
+</body>
+</html>

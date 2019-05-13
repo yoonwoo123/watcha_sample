@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def list(request):
-    movies = Movie.objects.all()
+    movies = Movie.objects.order_by('-popularity')
     context = {'movies': movies}
     return render(request, 'movies/list.html', context)
     
