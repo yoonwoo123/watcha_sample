@@ -13,8 +13,8 @@ def detail(request, movie_pk):
     # score = get_object_or_404(Score, pk=movie_pk)
     score = Score.objects.all()
     score_form = ScoreForm()
-    movie_detail = get_object_or_404(Movie, pk=movie_pk)
-    context = {'movie_detail': movie_detail, 'score_form': score_form, 'score': score}
+    movie = get_object_or_404(Movie, pk=movie_pk)
+    context = {'movie': movie, 'score_form': score_form, 'score': score}
     return render(request, 'movies/detail.html', context)
 
 @login_required
