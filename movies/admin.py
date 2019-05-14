@@ -19,4 +19,5 @@ class VideoAdmin(admin.ModelAdmin):
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Creator, CreatorAdmin)
+admin.site.register(Score, ScoreAdmin)
 admin.site.register(Video, VideoAdmin)

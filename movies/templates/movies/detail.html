@@ -6,6 +6,10 @@
 <p>인기도: {{ movie.popularity }}</p>
 <p>상영시간: {{ movie.runtime }} 분</p>
 <p>스토리: {{ movie.overview }}</p>
+{% for score in user.score_set.all %}
+<p>{{ score.value }} 점 </p>
+{% endfor %}
+
 <a>배우: </a>&nbsp;
     {% for actor in movie.actors.all %}
     <a>{{ actor.name }}</a> |

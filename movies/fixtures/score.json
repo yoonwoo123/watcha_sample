@@ -1,0 +1,802 @@
+[
+	{
+		"model": "movies.score",
+		"pk": 1,
+		"fields": {
+			"content": "",
+			"value": 1.4,
+			"movie": 287947,
+			"user": 1
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 2,
+		"fields": {
+			"content": "",
+			"value": 8.8,
+			"movie": 299534,
+			"user": 1
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 3,
+		"fields": {
+			"content": "",
+			"value": 6.6,
+			"movie": 299537,
+			"user": 1
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 4,
+		"fields": {
+			"content": "",
+			"value": 5.8,
+			"movie": 447404,
+			"user": 1
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 5,
+		"fields": {
+			"content": "",
+			"value": 5.8,
+			"movie": 287947,
+			"user": 2
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 6,
+		"fields": {
+			"content": "",
+			"value": 0.9,
+			"movie": 299534,
+			"user": 2
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 7,
+		"fields": {
+			"content": "",
+			"value": 4.2,
+			"movie": 299537,
+			"user": 2
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 8,
+		"fields": {
+			"content": "",
+			"value": 6.4,
+			"movie": 447404,
+			"user": 2
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 9,
+		"fields": {
+			"content": "",
+			"value": 7.5,
+			"movie": 287947,
+			"user": 3
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 10,
+		"fields": {
+			"content": "",
+			"value": 2.5,
+			"movie": 299534,
+			"user": 3
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 11,
+		"fields": {
+			"content": "",
+			"value": 0.6,
+			"movie": 299537,
+			"user": 3
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 12,
+		"fields": {
+			"content": "",
+			"value": 0.4,
+			"movie": 447404,
+			"user": 3
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 13,
+		"fields": {
+			"content": "",
+			"value": 2.7,
+			"movie": 287947,
+			"user": 4
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 14,
+		"fields": {
+			"content": "",
+			"value": 6.3,
+			"movie": 299534,
+			"user": 4
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 15,
+		"fields": {
+			"content": "",
+			"value": 1.4,
+			"movie": 299537,
+			"user": 4
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 16,
+		"fields": {
+			"content": "",
+			"value": 8.4,
+			"movie": 447404,
+			"user": 4
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 17,
+		"fields": {
+			"content": "",
+			"value": 5.2,
+			"movie": 287947,
+			"user": 5
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 18,
+		"fields": {
+			"content": "",
+			"value": 7.5,
+			"movie": 299534,
+			"user": 5
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 19,
+		"fields": {
+			"content": "",
+			"value": 7.0,
+			"movie": 299537,
+			"user": 5
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 20,
+		"fields": {
+			"content": "",
+			"value": 1.1,
+			"movie": 447404,
+			"user": 5
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 21,
+		"fields": {
+			"content": "",
+			"value": 1.0,
+			"movie": 287947,
+			"user": 6
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 22,
+		"fields": {
+			"content": "",
+			"value": 6.1,
+			"movie": 299534,
+			"user": 6
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 23,
+		"fields": {
+			"content": "",
+			"value": 6.1,
+			"movie": 299537,
+			"user": 6
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 24,
+		"fields": {
+			"content": "",
+			"value": 6.5,
+			"movie": 447404,
+			"user": 6
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 25,
+		"fields": {
+			"content": "",
+			"value": 9.5,
+			"movie": 287947,
+			"user": 7
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 26,
+		"fields": {
+			"content": "",
+			"value": 6.8,
+			"movie": 299534,
+			"user": 7
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 27,
+		"fields": {
+			"content": "",
+			"value": 4.3,
+			"movie": 299537,
+			"user": 7
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 28,
+		"fields": {
+			"content": "",
+			"value": 6.3,
+			"movie": 447404,
+			"user": 7
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 29,
+		"fields": {
+			"content": "",
+			"value": 1.9,
+			"movie": 287947,
+			"user": 8
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 30,
+		"fields": {
+			"content": "",
+			"value": 5.6,
+			"movie": 299534,
+			"user": 8
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 31,
+		"fields": {
+			"content": "",
+			"value": 5.2,
+			"movie": 299537,
+			"user": 8
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 32,
+		"fields": {
+			"content": "",
+			"value": 3.2,
+			"movie": 447404,
+			"user": 8
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 33,
+		"fields": {
+			"content": "",
+			"value": 2.6,
+			"movie": 287947,
+			"user": 9
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 34,
+		"fields": {
+			"content": "",
+			"value": 6.0,
+			"movie": 299534,
+			"user": 9
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 35,
+		"fields": {
+			"content": "",
+			"value": 1.7,
+			"movie": 299537,
+			"user": 9
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 36,
+		"fields": {
+			"content": "",
+			"value": 4.9,
+			"movie": 447404,
+			"user": 9
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 37,
+		"fields": {
+			"content": "",
+			"value": 2.0,
+			"movie": 287947,
+			"user": 10
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 38,
+		"fields": {
+			"content": "",
+			"value": 5.9,
+			"movie": 299534,
+			"user": 10
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 39,
+		"fields": {
+			"content": "",
+			"value": 0.3,
+			"movie": 299537,
+			"user": 10
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 40,
+		"fields": {
+			"content": "",
+			"value": 3.1,
+			"movie": 447404,
+			"user": 10
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 41,
+		"fields": {
+			"content": "",
+			"value": 6.2,
+			"movie": 287947,
+			"user": 11
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 42,
+		"fields": {
+			"content": "",
+			"value": 5.8,
+			"movie": 299534,
+			"user": 11
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 43,
+		"fields": {
+			"content": "",
+			"value": 7.7,
+			"movie": 299537,
+			"user": 11
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 44,
+		"fields": {
+			"content": "",
+			"value": 1.1,
+			"movie": 447404,
+			"user": 11
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 45,
+		"fields": {
+			"content": "",
+			"value": 3.7,
+			"movie": 287947,
+			"user": 12
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 46,
+		"fields": {
+			"content": "",
+			"value": 9.5,
+			"movie": 299534,
+			"user": 12
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 47,
+		"fields": {
+			"content": "",
+			"value": 9.9,
+			"movie": 299537,
+			"user": 12
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 48,
+		"fields": {
+			"content": "",
+			"value": 1.6,
+			"movie": 447404,
+			"user": 12
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 49,
+		"fields": {
+			"content": "",
+			"value": 4.8,
+			"movie": 287947,
+			"user": 13
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 50,
+		"fields": {
+			"content": "",
+			"value": 7.4,
+			"movie": 299534,
+			"user": 13
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 51,
+		"fields": {
+			"content": "",
+			"value": 5.7,
+			"movie": 299537,
+			"user": 13
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 52,
+		"fields": {
+			"content": "",
+			"value": 1.9,
+			"movie": 447404,
+			"user": 13
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 53,
+		"fields": {
+			"content": "",
+			"value": 3.4,
+			"movie": 287947,
+			"user": 14
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 54,
+		"fields": {
+			"content": "",
+			"value": 0.1,
+			"movie": 299534,
+			"user": 14
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 55,
+		"fields": {
+			"content": "",
+			"value": 1.8,
+			"movie": 299537,
+			"user": 14
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 56,
+		"fields": {
+			"content": "",
+			"value": 6.9,
+			"movie": 447404,
+			"user": 14
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 57,
+		"fields": {
+			"content": "",
+			"value": 9.9,
+			"movie": 287947,
+			"user": 15
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 58,
+		"fields": {
+			"content": "",
+			"value": 9.3,
+			"movie": 299534,
+			"user": 15
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 59,
+		"fields": {
+			"content": "",
+			"value": 8.1,
+			"movie": 299537,
+			"user": 15
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 60,
+		"fields": {
+			"content": "",
+			"value": 2.3,
+			"movie": 447404,
+			"user": 15
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 61,
+		"fields": {
+			"content": "",
+			"value": 2.7,
+			"movie": 287947,
+			"user": 16
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 62,
+		"fields": {
+			"content": "",
+			"value": 6.0,
+			"movie": 299534,
+			"user": 16
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 63,
+		"fields": {
+			"content": "",
+			"value": 0.5,
+			"movie": 299537,
+			"user": 16
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 64,
+		"fields": {
+			"content": "",
+			"value": 2.8,
+			"movie": 447404,
+			"user": 16
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 65,
+		"fields": {
+			"content": "",
+			"value": 9.8,
+			"movie": 287947,
+			"user": 17
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 66,
+		"fields": {
+			"content": "",
+			"value": 4.3,
+			"movie": 299534,
+			"user": 17
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 67,
+		"fields": {
+			"content": "",
+			"value": 0.8,
+			"movie": 299537,
+			"user": 17
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 68,
+		"fields": {
+			"content": "",
+			"value": 3.6,
+			"movie": 447404,
+			"user": 17
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 69,
+		"fields": {
+			"content": "",
+			"value": 0.7,
+			"movie": 287947,
+			"user": 18
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 70,
+		"fields": {
+			"content": "",
+			"value": 2.9,
+			"movie": 299534,
+			"user": 18
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 71,
+		"fields": {
+			"content": "",
+			"value": 8.3,
+			"movie": 299537,
+			"user": 18
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 72,
+		"fields": {
+			"content": "",
+			"value": 3.3,
+			"movie": 447404,
+			"user": 18
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 73,
+		"fields": {
+			"content": "",
+			"value": 5.1,
+			"movie": 287947,
+			"user": 19
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 74,
+		"fields": {
+			"content": "",
+			"value": 2.6,
+			"movie": 299534,
+			"user": 19
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 75,
+		"fields": {
+			"content": "",
+			"value": 2.3,
+			"movie": 299537,
+			"user": 19
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 76,
+		"fields": {
+			"content": "",
+			"value": 2.5,
+			"movie": 447404,
+			"user": 19
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 77,
+		"fields": {
+			"content": "",
+			"value": 6.1,
+			"movie": 287947,
+			"user": 20
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 78,
+		"fields": {
+			"content": "",
+			"value": 2.0,
+			"movie": 299534,
+			"user": 20
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 79,
+		"fields": {
+			"content": "",
+			"value": 6.9,
+			"movie": 299537,
+			"user": 20
+		}
+	},
+	{
+		"model": "movies.score",
+		"pk": 80,
+		"fields": {
+			"content": "",
+			"value": 2.7,
+			"movie": 447404,
+			"user": 20
+		}
+	}
+]
