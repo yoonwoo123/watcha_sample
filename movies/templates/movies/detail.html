@@ -17,7 +17,7 @@
     {% endfor %}
 <br>
 {% for video in movie.video_set.all %}
-    <a href=""><img src="https://i.ytimg.com/vi/{{ video.key }}/hqdefault.jpg" alt=""></a>
+    <iframe width="560" height="315" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
 {% endfor %}
 <hr>
 <h2>평점 목록</h2>
