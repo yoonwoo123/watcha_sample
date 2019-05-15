@@ -20,9 +20,41 @@
     <a>{{ genre.name }}</a> |
     {% endfor %}
 <br>
-{% for video in movie.video_set.all %}
-    <iframe width="560" height="315" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
-{% endfor %}
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <iframe width="730" height="410" src="//www.youtube.com/embed/{{ movie.video_set[0].key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="carousel-item">
+      {% for video in movie.video_set.all %}
+        <iframe width="730" height="410" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+      {% endfor %}
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+<div class="slider-wrap">
+  <div class="slider" id="slider">
+    <div class="holder">
+      <div class="slide">
+          {% for video in movie.video_set.all %}
+            <iframe width="730" height="410" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+
 <hr>
 <h2>평점 목록</h2>
 <br>

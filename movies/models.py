@@ -11,7 +11,7 @@ class Genre(models.Model):
 class Movie(models.Model):
     title = models.TextField()
     original_title = models.TextField()
-    runtime = models.IntegerField()
+    runtime = models.IntegerField(blank=True)
     genres = models.ManyToManyField(Genre, related_name='movies')
     overview = models.TextField()
     poster_url = models.TextField()
