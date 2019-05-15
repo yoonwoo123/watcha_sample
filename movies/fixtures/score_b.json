@@ -1511,16 +1511,6 @@
 	},
 	{
 		"model": "movies.score",
-		"pk": 152,
-		"fields": {
-			"content": "",
-			"value": "6",
-			"movie": 463482,
-			"user": 8
-		}
-	},
-	{
-		"model": "movies.score",
 		"pk": 153,
 		"fields": {
 			"content": "",
@@ -2956,16 +2946,6 @@
 			"content": "",
 			"value": "9",
 			"movie": 135397,
-			"user": 25
-		}
-	},
-	{
-		"model": "movies.score",
-		"pk": 297,
-		"fields": {
-			"content": "",
-			"value": "8",
-			"movie": 487555,
 			"user": 25
 		}
 	},
@@ -4861,16 +4841,6 @@
 	},
 	{
 		"model": "movies.score",
-		"pk": 487,
-		"fields": {
-			"content": "",
-			"value": "10",
-			"movie": 487555,
-			"user": 36
-		}
-	},
-	{
-		"model": "movies.score",
 		"pk": 488,
 		"fields": {
 			"content": "",
@@ -5016,16 +4986,6 @@
 			"content": "",
 			"value": "10",
 			"movie": 63686,
-			"user": 36
-		}
-	},
-	{
-		"model": "movies.score",
-		"pk": 503,
-		"fields": {
-			"content": "",
-			"value": "10",
-			"movie": 371506,
 			"user": 36
 		}
 	},
@@ -10736,16 +10696,6 @@
 			"content": "",
 			"value": "10",
 			"movie": 24428,
-			"user": 68
-		}
-	},
-	{
-		"model": "movies.score",
-		"pk": 1075,
-		"fields": {
-			"content": "",
-			"value": "10",
-			"movie": 595830,
 			"user": 68
 		}
 	},
@@ -22111,16 +22061,6 @@
 	},
 	{
 		"model": "movies.score",
-		"pk": 2212,
-		"fields": {
-			"content": "",
-			"value": "10",
-			"movie": 67012,
-			"user": 167
-		}
-	},
-	{
-		"model": "movies.score",
 		"pk": 2213,
 		"fields": {
 			"content": "",
@@ -26436,16 +26376,6 @@
 			"content": "",
 			"value": "2",
 			"movie": 52728,
-			"user": 183
-		}
-	},
-	{
-		"model": "movies.score",
-		"pk": 2645,
-		"fields": {
-			"content": "",
-			"value": "1",
-			"movie": 592680,
 			"user": 183
 		}
 	},
