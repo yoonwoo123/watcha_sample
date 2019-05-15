@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<h1>추천 {{user.pk}}</h1>
+<ol>
+{% for movie in result %}
+    <li>
+        {{movie}}
+    </li>
+{% endfor %}
+</ol>
+<hr>
+<hr>
+<h1>추천2 {{user.pk}}</h1>
+{% for movie in result2 %}
+    <li>
+        {{movie}}
+    </li>
+{% endfor %}
+<hr>
+<hr>
+<ul>
+{% for user, movies in r_model.items %}
+    <li>
+        <p>{{user}} {</p>
+        <ul>
+            {% for movie, score in movies.items %}
+            <li>
+                {{movie}} : {{score}}
+            </li>
+            {% endfor %}
+        </ul>
+        <p>}</p>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

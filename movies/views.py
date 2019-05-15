@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Movie, Score
 from .forms import ScoreForm
 from django.contrib.auth.decorators import login_required
-
+from .recommendations import get_recommendations, top_matches
 # Create your views here.
 def list(request):
     movies = Movie.objects.order_by('-popularity')
@@ -36,3 +36,26 @@ def del_score(request, movie_pk, score_pk):
         score = get_object_or_404(Score, pk=score_pk)
         score.delete()
         return redirect('movies:detail', movie_pk)
+
+    
+@login_required
+def recommendation(request):
+    scores = Score.objects.all()
+    r_model = dict()
+    for score in scores:
+        if r_model.get(score.user.pk):
+            r_model[score.user.pk][score.movie.pk] = score.value
+        else:
+            r_model[score.user.pk] = {score.movie.pk : score.value}
+            
+    result = get_recommendations(r_model, request.user.pk)
+    t_match = top_matches(r_model, request.user.pk)
+    context = {
+        'r_model':r_model,
+        'result':result,
+        'result2':t_match,
+    }
+    print('결과')
+    print(t_match)
+    return render(request, 'movies/recommendation.html', context)
+    
