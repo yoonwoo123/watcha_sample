@@ -7,11 +7,11 @@ class Creator(models.Model): # 감독과 배우 모두 들어있는 클래스
     
 class Genre(models.Model):
     name = models.TextField()
-    
+
 class Movie(models.Model):
     title = models.TextField()
     original_title = models.TextField()
-    runtime = models.IntegerField()
+    runtime = models.IntegerField(blank=True)
     genres = models.ManyToManyField(Genre, related_name='movies')
     overview = models.TextField()
     poster_url = models.TextField()
@@ -19,8 +19,13 @@ class Movie(models.Model):
     actors = models.ManyToManyField(Creator, related_name='movies')
     director = models.ForeignKey(Creator, on_delete=models.CASCADE)
 
+class Video(models.Model):
+    name = models.TextField(blank=True)
+    key = models.TextField(blank=True)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
 class Score(models.Model):
-    content = models.CharField(max_length=140, blank=True)
+    content = models.CharField(blank=True, max_length=140)
     value = models.FloatField()
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

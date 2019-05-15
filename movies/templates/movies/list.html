@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
 {% block body %}
-<h1>영화 목록</h1>
+<h1 class="text-center">영화 목록</h1>
 <br><br>
-{% for movie in movies %}
-    <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
-    <br>
-{% endfor %}
+<div class="row w-200">
+    {% for movie in movies %}
+        <div class="col-xs-12 col-sm-6 col-md-4 my-2">
+            
+              <div class="card border-0">
+                <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
+                <br>
+              </div>
+        </div>
+    {% endfor %}
+    <!--</div>-->
+</div>
 {% endblock %}
