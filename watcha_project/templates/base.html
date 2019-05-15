@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100);
+        @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100);
         #list_img {
             width: 282px;
             height: 400px;
@@ -22,7 +22,7 @@
         font-family: 'Stylish', sans-serif;
         }
       
-    #carouselDetailControls {
+        #carouselDetailControls {
           width: 730px;
           height: 410px;
         }
@@ -37,91 +37,106 @@
           height: 10% !important;
           width: 30px !important;
         }
-    
-    html, body {
-      position: relative;
-      height: 100%;
-    }
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color:#000;
-      margin: 0;
-      padding: 0;
-    }
-    .swiper-container {
-      width: 100%;
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      /* Center slide text vertically */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      -webkit-align-items: center;
-      align-items: center;
-    }
+        
+        html, body {
+          position: relative;
+          height: 100%;
+        }
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color:#000;
+          margin: 0;
+          padding: 0;
+        }
+        .swiper-container {
+          width: 100%;
+          height: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+        .list-group {
+              z-index: 5 !important;
+              position: relative !important;
+        }
         
     </style>
-<link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'movies:list' %}">Show me the Movie</a>  
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'movies:list' %}">Show me the Movie</a>  
+    <div id='search-app'>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <ul class="list-group position-absolute">
+        <li class="list-group-item">Cras justo odio</li>
+      </ul>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      {% if user.is_authenticated %}
-      <!--margin 을 왼쪽에 전부준다 즉 오른쪽끝에 붙음 평소에는 마진이 오른쪽으로 전부 가있다.-->
-      <!--반띵하고 싶으면 base.html style 태그에 margin:auto; 해주면 반띵-->
-      <div class="ml-auto"> 
-        <ul class="navbar-nav mr-auto">
-          <span class="navbar-text">
-            {{ user }} 님 환영합니다 !
-          </span>&nbsp;
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃</a>
-          </li>
-          &nbsp; &nbsp;
-          <li class="nav-item">
-            <form action="" method="post">
-                {% csrf_token %}
-                <input class="nav-link" type="submit" value="회원탈퇴">
-            </form>
-          </li>
-        </ul>
-      </div>
-      {% else %}
-      <div class="ml-auto">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'accounts:login' %}">로그인</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{% url 'accounts:signup' %}">가입하기</a>
-          </li>
-        </ul>
-      </div>
-  </div>
-      {% endif %}
-</nav>
+    </button>
+    
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {% if user.is_authenticated %}
+        <!--margin 을 왼쪽에 전부준다 즉 오른쪽끝에 붙음 평소에는 마진이 오른쪽으로 전부 가있다.-->
+        <!--반띵하고 싶으면 base.html style 태그에 margin:auto; 해주면 반띵-->
+        <div class="ml-auto"> 
+          <ul class="navbar-nav mr-auto">
+            <span class="navbar-text">
+              {{ user }} 님 환영합니다 !
+            </span>&nbsp;
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃</a>
+            </li>
+            &nbsp; &nbsp;
+            <li class="nav-item">
+              <form action="" method="post">
+                  {% csrf_token %}
+                  <input class="nav-link" type="submit" value="회원탈퇴">
+              </form>
+            </li>
+          </ul>
+        </div>
+        {% else %}
+        <div class="ml-auto">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'accounts:login' %}">로그인</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'accounts:signup' %}">가입하기</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+        {% endif %}
+  </nav>
 
 
 <a href="{% url 'accounts:list' %}">유저 목록</a>&nbsp;
@@ -143,5 +158,12 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+  const app = new Vue({
+    el: '#search-app',
+    data: 
+  })
+</script>
 </body>
 </html>
