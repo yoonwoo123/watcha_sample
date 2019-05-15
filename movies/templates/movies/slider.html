@@ -1,0 +1,12 @@
+<div class="slider-wrap">
+  <div class="slider" id="slider">
+    <div class="holder">
+      <div class="slide">
+          {% for video in movie.video_set.all %}
+            <iframe width="730" height="410" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
