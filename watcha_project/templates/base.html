@@ -9,7 +9,7 @@
     <style>
     @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100);
         #list_img {
-            width: 300px;
+            width: 282px;
             height: 400px;
         }
         
@@ -21,40 +21,59 @@
         * {
         font-family: 'Stylish', sans-serif;
         }
-        
-        .slider-wrap {
-          width: 733px;
-          height: auto;
-          margin: 20px auto;
-        }
-        .slider {
-          overflow-x: scroll;
-        }
-        .holder {
-          width: 300%;
-        }
-        .slide {
-          float: left;
-          width: auto;
-          height: auto;
-          position: relative;
-          background-position: -100px 0;
-        }
-
-        #carouselExampleControls {
+      
+    #carouselDetailControls {
           width: 730px;
           height: 410px;
         }
+        
         .carousel-control-prev {
           margin-top: 190px;
           height: 10% !important;
-          
+          width: 30px !important;
         }
         .carousel-control-next {
           margin-top: 190px;
           height: 10% !important;
-          
+          width: 30px !important;
         }
+    
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
         
     </style>
 <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
@@ -107,10 +126,11 @@
 
 <a href="{% url 'accounts:list' %}">유저 목록</a>&nbsp;
 <a href="{% url 'movies:list' %}">영화 목록</a>
-<div class="container">
+
+<!--<div class="container">-->
     {% block body %}
     {% endblock %}
-</div>
+<!--</div>-->
 
 <footer class="footer mt-auto py-3 bg-dark">
     <div class="container d-flex justify-content-between">
