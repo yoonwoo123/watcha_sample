@@ -2,16 +2,71 @@
 {% block body %}
 <h1 class="text-center">영화 목록</h1>
 <br><br>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+      <div class="swiper-slide">Slide 10</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="../dist/js/swiper.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
 <div class="row w-200">
-    {% for movie in movies %}
-        <div class="col-xs-12 col-sm-6 col-md-4 my-2">
-            
-              <div class="card border-0">
-                <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
-                <br>
-              </div>
+    <div id="carouselListControls" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="{% url 'movies:detail' movies.first.pk %}"><img id="list_img" src="{{ movies.first.poster_url }}"></a>
         </div>
-    {% endfor %}
-    <!--</div>-->
+            <div class="carousel-item">
+        {% for movie in movies %}
+          {% if movie.title != movies.first.title %}
+                <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
+                
+          {% endif %}
+          {% endfor %}
+            </div>
+      </div>
+      <a class="carousel-control-prev bg-secondary" href="#carouselListControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next bg-secondary" href="#carouselListControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 </div>
+
 {% endblock %}

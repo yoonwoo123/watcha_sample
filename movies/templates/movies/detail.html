@@ -21,7 +21,7 @@
     {% endfor %}
 <br>
 <div class="row">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div id="carouselDetailControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
             <iframe id="steel" class="d-block w-100" width="730" height="410" src="//www.youtube.com/embed/{{ movie.video_set.all.first.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
@@ -34,11 +34,11 @@
           {% endif %}
       {% endfor %}
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <a class="carousel-control-prev" href="#carouselDetailControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#carouselDetailControls" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
