@@ -1,67 +1,69 @@
 {% extends 'base.html' %}
 {% block body %}
-<p>title : {{ movie.title }}</p>
-<p>original_title : {{ movie.original_title }}</p>
-<img id="detail_img" src="{{ movie.poster_url }}" alt="{{ movie.title }}포스터">
-<p>인기도: {{ movie.popularity }}</p>
-<p>상영시간: {{ movie.runtime }} 분</p>
-<p>스토리: {{ movie.overview }}</p>
-{% for score in user.score_set.all %}
-<p>{{ score.value }} 점 </p>
-{% endfor %}
-
-<a>배우: </a>&nbsp;
-    {% for actor in movie.actors.all %}
-    <a>{{ actor.name }}</a> |
+<div class="container">
+    <p>title : {{ movie.title }}</p>
+    <p>original_title : {{ movie.original_title }}</p>
+    <img id="detail_img" src="{{ movie.poster_url }}" alt="{{ movie.title }}포스터">
+    <p>인기도: {{ movie.popularity }}</p>
+    <p>상영시간: {{ movie.runtime }} 분</p>
+    <p>스토리: {{ movie.overview }}</p>
+    {% for score in user.score_set.all %}
+    <p>{{ score.value }} 점 </p>
     {% endfor %}
-<p>감독: {{ movie.director.name }} </p>
-<a>장르: </a>&nbsp;
-    {% for genre in movie.genres.all %}
-    <a>{{ genre.name }}</a> |
-    {% endfor %}
-<br>
-<div class="row">
-    <div id="carouselDetailControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-            <iframe id="steel" class="d-block w-100" width="730" height="410" src="//www.youtube.com/embed/{{ movie.video_set.all.first.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
-        </div>
-      {% for video in movie.video_set.all %}
-          {% if video.key != movie.video_set.all.first.key %}
-            <div class="carousel-item">
-                <iframe id="steel" class="d-block w-100" width="730" height="410" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+    
+    <a>배우: </a>&nbsp;
+        {% for actor in movie.actors.all %}
+        <a>{{ actor.name }}</a> |
+        {% endfor %}
+    <p>감독: {{ movie.director.name }} </p>
+    <a>장르: </a>&nbsp;
+        {% for genre in movie.genres.all %}
+        <a>{{ genre.name }}</a> |
+        {% endfor %}
+    <br>
+    <div class="row">
+        <div id="carouselDetailControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <iframe id="steel" class="d-block w-100" width="730" height="410" src="//www.youtube.com/embed/{{ movie.video_set.all.first.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
             </div>
-          {% endif %}
-      {% endfor %}
-      </div>
-      <a class="carousel-control-prev" href="#carouselDetailControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselDetailControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+          {% for video in movie.video_set.all %}
+              {% if video.key != movie.video_set.all.first.key %}
+                <div class="carousel-item">
+                    <iframe id="steel" class="d-block w-100" width="730" height="410" src="//www.youtube.com/embed/{{ video.key }}?autoplay=0&origin=https%3A%2F%2Fwww.themoviedb.org&hl=ko&modestbranding=1&fs=1&autohide=1" frameborder="0" allowfullscreen></iframe>
+                </div>
+              {% endif %}
+          {% endfor %}
+          </div>
+          <a class="carousel-control-prev" href="#carouselDetailControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselDetailControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
     </div>
-</div>
-<hr>
-<h2>평점 목록</h2>
-<br>
-
-{% for content in movie.score_set.all %}
-    <p><b>{{ content.user }}님의 댓글:</b> {{ content.content }} <b>| 평점:</b> {{ content.value }}</p>
-    {% if user == content.user or user.is_superuser %}
-    <form action="{% url 'movies:del_score' movie.pk content.pk %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="삭제">
-    </form>
-    {% endif %}
     <hr>
-{% endfor %}
-
-<form action="{% url 'movies:new_score' movie.pk %}" method="post">
-    {% csrf_token %}
-    {{ score_form }}
-    <input type="submit" value="작성하기">
-</form>
+    <h2>평점 목록</h2>
+    <br>
+    
+    {% for content in movie.score_set.all %}
+        <p><b>{{ content.user }}님의 댓글:</b> {{ content.content }} <b>| 평점:</b> {{ content.value }}</p>
+        {% if user == content.user or user.is_superuser %}
+        <form action="{% url 'movies:del_score' movie.pk content.pk %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="삭제">
+        </form>
+        {% endif %}
+        <hr>
+    {% endfor %}
+    
+    <form action="{% url 'movies:new_score' movie.pk %}" method="post">
+        {% csrf_token %}
+        {{ score_form }}
+        <input type="submit" value="작성하기">
+    </form>
+</div>
 {% endblock %}
