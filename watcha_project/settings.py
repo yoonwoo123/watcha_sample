@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'crispy_forms',
     'accounts',
     'movies',
 ]
@@ -127,3 +128,5 @@ STATICFILES_DIRS = (
 )
 
 AUTH_USER_MODEL = 'accounts.User'
+
+CRISPY_TEMPLATE_PACK='bootstrap4'

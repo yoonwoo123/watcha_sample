@@ -1,45 +1,50 @@
 {% extends 'base.html' %}
 {% block body %}
-<h1 class="text-center">{{user.username}} 님에게 추천합니다 !</h1>
-
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        {% for movie in movies %}
-        <div class="swiper-slide">
-            <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
+{% if recommendable %}
+    <h1 class="text-center">{{user.username}} 님에게 추천합니다 !</h1>
+    
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for movie in movies %}
+            <div class="swiper-slide">
+                <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <!-- Add Pagination -->
+        <!--<div class="swiper-pagination"></div>-->
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
-    <!-- Add Pagination -->
-    <!--<div class="swiper-pagination"></div>-->
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</div>
+    
+    <!-- Swiper JS -->
+    {% load static %}
+    <script src="{% static 'dist/js/swiper.min.js' %}"></script>
+      
+    <!-- Initialize Swiper -->
+    <script>
+      // const listmovies = movies
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        centeredSlides: true,
+        spaceBetween: 0,
+        slidesPerGroup: 4,
+        loop: true,
+        // loopFillGroupWithBlank: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+    
+{% else %}
+<h1>영화정보에서 평가를 7개 이상 해주셔야 취향 저격해드립니다.</h1>
 
-<!-- Swiper JS -->
-{% load static %}
-<script src="{% static 'dist/js/swiper.min.js' %}"></script>
-  
-<!-- Initialize Swiper -->
-<script>
-  // const listmovies = movies
-  var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 4,
-    centeredSlides: true,
-    spaceBetween: 0,
-    slidesPerGroup: 4,
-    loop: true,
-    // loopFillGroupWithBlank: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-</script>
-
+{% endif %}
 {% endblock %}

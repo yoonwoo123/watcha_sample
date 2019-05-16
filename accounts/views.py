@@ -29,7 +29,7 @@ def login(request):
         login_form = AuthenticationForm(request, request.POST)
         if login_form.is_valid():
             auth_login(request, login_form.get_user())
-            return redirect('accounts:list')
+            return redirect('movies:list')
     else:
         login_form = AuthenticationForm(request)
         context = {'login_form': login_form}

@@ -42,7 +42,7 @@ def del_score(request, movie_pk, score_pk):
 def recommendation(request):
     movies = None
     recommendable = False
-    if request.user.score_set.count() >= 10:
+    if request.user.score_set.count() >= 7:
         recommendable = True
         scores = Score.objects.all()
         r_model = dict()
