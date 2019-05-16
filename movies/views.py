@@ -40,25 +40,25 @@ def del_score(request, movie_pk, score_pk):
     
 @login_required
 def recommendation(request):
-    scores = Score.objects.all()
-    r_model = dict()
-    for score in scores:
-        if r_model.get(score.user.pk):
-            r_model[score.user.pk][score.movie.pk] = score.value
-        else:
-            r_model[score.user.pk] = {score.movie.pk : score.value}
-            
-    movie_ids = get_recommendations(r_model, request.user.pk)
-    # t_match = top_matches(r_model, request.user.pk)
-    
-    movies = Movie.objects.filter(pk__in=movie_ids)
-    # movies = Movie.objects.all()
+    movies = None
+    recommendable = False
+    if request.user.score_set.count() >= 10:
+        recommendable = True
+        scores = Score.objects.all()
+        r_model = dict()
+        for score in scores:
+            if r_model.get(score.user.pk):
+                r_model[score.user.pk][score.movie.pk] = score.value
+            else:
+                r_model[score.user.pk] = {score.movie.pk : score.value}
+                
+        movie_ids = get_recommendations(r_model, request.user.pk)
+        movies = Movie.objects.filter(pk__in=movie_ids)
+
     context = {
-        # 'r_model':r_model,
         'movies':movies,
-        # 'result2':t_match,
+        'recommendable':recommendable,
     }
     print('결과')
     print(movies)
     return render(request, 'movies/reco.html', context)
-    
