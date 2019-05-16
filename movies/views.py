@@ -61,5 +61,5 @@ def recommendation(request):
     }
     # print('결과')
     # print(t_match)
-    return render(request, 'movies/recommendation.html', context)
+    return render(request, 'movies/list.html', context)
     
