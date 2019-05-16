@@ -48,14 +48,18 @@ def recommendation(request):
         else:
             r_model[score.user.pk] = {score.movie.pk : score.value}
             
-    result = get_recommendations(r_model, request.user.pk)
-    t_match = top_matches(r_model, request.user.pk)
+    movie_ids = get_recommendations(r_model, request.user.pk)
+    # t_match = top_matches(r_model, request.user.pk)
+    
+    movies = Movie.objects.filter(pk__in=movie_ids)
+    # movies = Movie.objects.all()
+    print(movies)
     context = {
-        'r_model':r_model,
-        'result':result,
-        'result2':t_match,
+        # 'r_model':r_model,
+        'movies':movies,
+        # 'result2':t_match,
     }
-    print('결과')
-    print(t_match)
+    # print('결과')
+    # print(t_match)
     return render(request, 'movies/recommendation.html', context)
     

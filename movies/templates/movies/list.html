@@ -49,14 +49,13 @@
         <div class="carousel-item active">
             <a href="{% url 'movies:detail' movies.first.pk %}"><img id="list_img" src="{{ movies.first.poster_url }}"></a>
         </div>
-            <div class="carousel-item">
+        <div class="carousel-item">
         {% for movie in movies %}
           {% if movie.title != movies.first.title %}
-                <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
-                
+            <a href="{% url 'movies:detail' movie.pk %}"><img id="list_img" src="{{ movie.poster_url }}"></a>
           {% endif %}
-          {% endfor %}
-            </div>
+        {% endfor %}
+        </div>
       </div>
       <a class="carousel-control-prev bg-secondary" href="#carouselListControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

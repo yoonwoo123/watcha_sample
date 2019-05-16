@@ -151,7 +151,7 @@ def get_recommendations(prefs, person, similarity=sim_pearson):
     # 정렬된 목록 리턴
     rankings.sort()
     rankings.reverse()
-    return rankings
+    return [x[1] for x in rankings]
 
 # 사람을 제품 기준으로 dict 변경
 def transform_prefs(prefs):
