@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dist/css/swiper.min.css' %}">
+    
     <style>
         @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100);
         #list_img {
@@ -38,10 +41,6 @@
           width: 30px !important;
         }
         
-        html, body {
-          position: relative;
-          height: 100%;
-        }
         body {
           background: #eee;
           font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -52,9 +51,8 @@
         }
         .swiper-container {
           width: 100%;
-          height: 100%;
-          margin-left: auto;
-          margin-right: auto;
+          height: 400px;
+          margin: 20px auto;
         }
         .swiper-slide {
           text-align: center;
@@ -74,13 +72,25 @@
           -webkit-align-items: center;
           align-items: center;
         }
-        .list-group {
-              z-index: 5 !important;
-              position: relative !important;
+        .append-buttons {
+        text-align: center;
+        margin-top: 20px;
+        }
+        .append-buttons a {
+        display: inline-block;
+        border: 1px solid #007aff;
+        color: #007aff;
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 4px;
+        margin: 0 10px;
+        font-size: 13px;
         }
         
     </style>
+
     {% block style %} {% endblock %}
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -161,10 +171,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
-  const app = new Vue({
-    el: '#search-app',
-    data: {}
-  })
+
+  // const app = new Vue({
+  //   el: '#search-app',
+    // data: 
+  // })
+
 </script>
 </body>
 </html>
