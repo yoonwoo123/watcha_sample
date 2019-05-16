@@ -18,7 +18,7 @@ def signup(request):
         if user_form.is_valid():
             user = user_form.save()
             auth_login(request, user)
-            return redirect('accounts:list')
+            return redirect('movies:list')
     else:
         user_form = UserForm()
         context = {'user_form': user_form}
@@ -38,7 +38,7 @@ def login(request):
 @login_required
 def logout(request):
     auth_logout(request)
-    return redirect('accounts:list')
+    return redirect('movies:list')
 
 @login_required
 def follow(request, user_pk):

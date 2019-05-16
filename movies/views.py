@@ -53,13 +53,12 @@ def recommendation(request):
     
     movies = Movie.objects.filter(pk__in=movie_ids)
     # movies = Movie.objects.all()
-    print(movies)
     context = {
         # 'r_model':r_model,
         'movies':movies,
         # 'result2':t_match,
     }
-    # print('결과')
-    # print(t_match)
-    return render(request, 'movies/list.html', context)
+    print('결과')
+    print(movies)
+    return render(request, 'movies/reco.html', context)
     

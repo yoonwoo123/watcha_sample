@@ -41,7 +41,17 @@
           width: 30px !important;
         }
         
+        html {
+          
+        }
+        .navbar {
+          background-color: rgba(18,18,18,0.94) !important;
+        }
+        
+        
         body {
+          color: #525452 !important;
+          background-color: #191919 !important;
           background: #eee;
           font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
           font-size: 14px;
@@ -50,11 +60,13 @@
           padding: 0;
         }
         .swiper-container {
+          background-color: #191919 !important;
           width: 100%;
           height: 400px;
           margin: 20px auto;
         }
         .swiper-slide {
+          background-color: #191919 !important;
           width: 300px !important;
           text-align: center;
           font-size: 18px;
@@ -100,18 +112,18 @@
     <link href="https://fonts.googleapis.com/css?family=Stylish" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
+<body class="">
     
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <a class="navbar-brand" href="{% url 'movies:list' %}">Show me the Movie</a>  
     <div id='search-app'>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <ul class="list-group position-absolute">
-        <li class="list-group-item">Cras justo odio</li>
-      </ul>
+      <!--<ul class="list-group position-absolute">-->
+      <!--  <li class="list-group-item">Cras justo odio</li>-->
+      <!--</ul>-->
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -126,7 +138,10 @@
           <ul class="navbar-nav mr-auto">
             <span class="navbar-text">
               {{ user }} 님 환영합니다 !
-            </span>&nbsp;
+            </span>&nbsp;&nbsp;
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'movies:recommendation' %}">취향 저격</a>
+            </li>&nbsp;&nbsp;
             <li class="nav-item">
               <a class="nav-link" href="{% url 'accounts:logout' %}">로그아웃</a>
             </li>
@@ -134,7 +149,7 @@
             <li class="nav-item">
               <form action="" method="post">
                   {% csrf_token %}
-                  <input class="nav-link" type="submit" value="회원탈퇴">
+                  <input class="nav-link bg-dark" type="submit" value="회원탈퇴">
               </form>
             </li>
           </ul>
@@ -155,8 +170,8 @@
   </nav>
 
 
-<a href="{% url 'accounts:list' %}">유저 목록</a>&nbsp;
-<a href="{% url 'movies:list' %}">영화 목록</a>
+<!--<a href="">유저 목록</a>&nbsp;-->
+<!--<a href="">영화 목록</a>-->
 
 <!--<div class="container">-->
     {% block body %}
