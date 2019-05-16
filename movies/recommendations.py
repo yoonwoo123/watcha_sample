@@ -164,5 +164,3 @@ def transform_prefs(prefs):
             result[item][person] = prefs[person][item]
 
     return result
-
-print(get_recommendations(critics,'Michael Phillips'))
